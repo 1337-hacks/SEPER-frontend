@@ -29,7 +29,9 @@ const DisplayEvidencePage = () => {
           <Data>
             <div>
                 <h2>Select SE Practice to get evidence for the claimed benefits</h2>
-                {/* <Dropdown/> */}
+                <Dropdown>
+                  <p>Select SE Practice: </p>
+                </Dropdown>
                 {/* <Styles> */}
                   <Table data={articles} columns={tablecolumns}/>
                 {/* </Styles> */}
