@@ -13,7 +13,7 @@ import {
 import Table from "../../Evidence-Table/evidencetable";
 import tablecolumns from "../../Evidence-Table/tablecolumns";
 import Dropdown from "../../Evidence-Table/dropdown";
-//import Styles from "../../Evidence-Table/tablestyle";
+import Styles from "../../Evidence-Table/tablestyle";
 
 const DisplayEvidencePage = function() {
 
@@ -40,9 +40,9 @@ const DisplayEvidencePage = function() {
               <Dropdown>
                 <p>Select SE Practice: </p>
               </Dropdown>
-              {/* <Styles> */}
+              <Styles>
                 <Table data={articles} columns={tablecolumns}/>
-              {/* </Styles> */}
+              </Styles>
           </div>
             <Link to="/">
           <DisplayButton> Home </DisplayButton>
