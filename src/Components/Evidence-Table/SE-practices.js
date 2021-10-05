@@ -1,16 +1,16 @@
 const SEPractices = [
-    {
-      id: 1,
-      practice: 'Product Quality Improvement',
-    },
-    {
-      id: 2,
-      practice: 'Code Quality Omprovement',
-    },
-    {
-      id: 3,
-      practice: 'Team Satisfaction Improvement',
-    }
-  ];
+  {
+    claim: 'Show All',
+  },
+  {
+    claim: 'Product Quality Improvement',
+  },
+  {
+    claim: 'Code Quality Improvement',
+  },
+  {
+    claim: 'Team Satisfaction Improvement',
+  }
+];
 
   export default SEPractices;
