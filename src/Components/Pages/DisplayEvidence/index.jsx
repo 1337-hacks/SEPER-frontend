@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+// import React, { Component } from 'react';
+// import axios from 'axios';
 
 import { Link } from "react-router-dom";
 import { 
@@ -13,8 +13,8 @@ import {
 import articles from "./../../Evidence-Table/articles";
 import Table from "../../Evidence-Table/evidencetable";
 import tablecolumns from "../../Evidence-Table/tablecolumns";
-import Dropdown from "../../Evidence-Table/dropdown";
-import Styles from "../../Evidence-Table/tablestyle";
+// import Dropdown from "../../Evidence-Table/dropdown";
+// import Styles from "../../Evidence-Table/tablestyle";
 
 const DisplayEvidencePage = () => {
 

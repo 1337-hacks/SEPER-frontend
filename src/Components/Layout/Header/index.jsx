@@ -22,7 +22,7 @@ const Header = () => {
                     <Link to = '/'>
                         <NavButtons> Home </NavButtons>
                     </Link>
-                    <Link to = '/'>
+                    <Link to = '/SubmitPage'>
                         <NavButtons> Search? </NavButtons>
                     </Link>
                     <Link to = '/'>
