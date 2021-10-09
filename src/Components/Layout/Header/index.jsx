@@ -23,7 +23,7 @@ const Header = () => {
                         <NavButtons> Home </NavButtons>
                     </Link>
                     <Link to = '/SubmitPage'>
-                        <NavButtons> Search? </NavButtons>
+                        <NavButtons> Submit Article </NavButtons>
                     </Link>
                     <Link to = '/'>
                         <NavButtons> Articles </NavButtons>
