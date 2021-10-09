@@ -1,15 +1,12 @@
 const SEPractices = [
   {
-    claim: 'Show All',
+    practice: 'Show All',
   },
   {
-    claim: 'Product Quality Improvement',
+    practice: 'TDD',
   },
   {
-    claim: 'Code Quality Improvement',
-  },
-  {
-    claim: 'Team Satisfaction Improvement',
+    practice: 'Mob Programming',
   }
 ];
 

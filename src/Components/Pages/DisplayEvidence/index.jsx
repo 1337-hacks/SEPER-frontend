@@ -21,15 +21,15 @@ const DisplayEvidencePage = function() {
   
   /* Fetch data from SE Practices table */
   const optionItems = SEPractices.map((SEPractices) =>
-    <option key={SEPractices.claim}>{SEPractices.claim}</option>,
-    // console.log(SEPractices)
+    <option key={SEPractices.practice}>{SEPractices.practice}</option>,
+    console.log(SEPractices)
   );
 
   /* Grabs selected value from dropdown menu */
-  const [result, optionValue] = useState(optionItems.claim);
+  const [result, optionValue] = useState(optionItems.practice);
 
   const optionHandler = e => {
-    optionValue(e.claim)
+    optionValue(e.practice)
   }
 
   /* Fetch data from Backend */
@@ -51,7 +51,7 @@ const DisplayEvidencePage = function() {
     }
   } else { // if user has chosen from dropdown menu
     for (var c = 0; c < articles.length; c++){
-      if(articles[c].claim === result) {
+      if(articles[c].practice === result) {
         // filteredData.filter(function (e) {return e != null;});
         filteredData[c] = articles[c]; // populate with elements corresponding to user input
       }
@@ -72,15 +72,15 @@ const DisplayEvidencePage = function() {
         <PageHeader>View Evidence</PageHeader>
         <Data>
           <div>
-              <h2>Select a claim</h2>
+              <h2>SEPER Evidence Table</h2>
               {/* <Dropdown/> */}
               {/* Dropdown menu */}
-              <p>-= Select a Claimed Benefit to display below =- </p>
+              <p>-= Select an SE Practice to display below =- </p>
               <Select 
                 options={SEPractices} 
                 onChange={optionHandler}
-                getOptionLabel={(SEPractices) => SEPractices['claim']}
-                getOptionValue={(SEPractices) => SEPractices['claim']}
+                getOptionLabel={(SEPractices) => SEPractices['practice']}
+                getOptionValue={(SEPractices) => SEPractices['practice']}
               />
               {/* Container for Evidence Table */}
               <Styles>
