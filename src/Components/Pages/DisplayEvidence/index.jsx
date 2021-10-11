@@ -87,9 +87,9 @@ const DisplayEvidencePage = function() {
       maxYear[y] = SEPubYear[y].pubyear;
     }
   } else if(minYearResult !== undefined || minYearResult !== "-"){ // get index of user selection for min year value
-    for(var a = 0; a < SEPubYear.length; a++){
-        if(minYearResult === SEPubYear[a].pubyear){
-          index = a;
+    for(var b = 0; b < SEPubYear.length; b++){
+        if(minYearResult === SEPubYear[b].pubyear){
+          index = b;
         }
     }
   }
@@ -145,6 +145,7 @@ const DisplayEvidencePage = function() {
                 <Select 
                   options={SEPractices} 
                   onChange={optionHandler}
+                  defaultValue={'Show All'}
                   getOptionLabel={(SEPractices) => SEPractices['practice']}
                   getOptionValue={(SEPractices) => SEPractices['practice']}
                 />
@@ -154,6 +155,7 @@ const DisplayEvidencePage = function() {
                 <Select 
                   options={SEPubYear} 
                   onChange={MinYearHandler}
+                  defaultValue={'-'}
                   getOptionLabel={(SEPubYear) => SEPubYear['pubyear']}
                   getOptionValue={(SEPubYear) => SEPubYear['pubyear']}
                 />
@@ -163,7 +165,7 @@ const DisplayEvidencePage = function() {
                   options={maxYear} 
                   onChange={MaxYearHandler}
                   defaultValue={'-'}
-                  placeholder={'Select a min year first'}
+                  placeholder={'Select a value for min year'}
                   getOptionLabel={(maxYear) => maxYear['pubyear']}
                   getOptionValue={(maxYear) => maxYear['pubyear']}
                 />
