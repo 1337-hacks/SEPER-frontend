@@ -14,16 +14,6 @@ class App extends Component {
     this.state = { apiResponse: "" };
   }
 
-  // callAPI() {
-  //     fetch("http://localhost:7000/evidence")
-  //         .then(res => res.text())
-  //         .then(res => this.setState({ apiResponse: res }));
-  // }
-
-  // componentWillMount() {
-  //     this.callAPI();
-  // }
-
   render() {
     return (
       <>
@@ -36,16 +26,6 @@ class App extends Component {
             </Switch>
           </PageLayout>
         </Router>
-
-        {/* <div>
-        <p>Count: {this.state.count}</p>
-        <button className="increment" onClick={this.increment}>Increment count</button>
-      </div>
-      
-      <Router>
-        <Route path='/disEvidence' component={DisplayEvidencePage} />
-      </Router>
-      */}
       </>
     );
   }

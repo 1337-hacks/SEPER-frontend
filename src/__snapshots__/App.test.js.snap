@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fodVek iYJPWe"
+  >
+    <header
+      class="sc-bdfBQB iQeoDA"
+    >
+      <div
+        class="sc-gsTEea bhvtfa"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Seper Logo"
+            class="sc-dlfnuX grXTIa"
+            src="/seperlogo.png"
+          />
+        </a>
+      </div>
+      <div
+        class="sc-hKgJUU biGAEd"
+      >
+        <div
+          class="sc-eCstlR fsLSao"
+        >
+          <a
+            href="/"
+          >
+            <li
+              class="sc-jSgvzq sc-gKseQn gvtmhi XFgwd"
+            >
+               Home 
+            </li>
+          </a>
+          <a
+            href="/"
+          >
+            <li
+              class="sc-jSgvzq sc-gKseQn gvtmhi XFgwd"
+            >
+               Search? 
+            </li>
+          </a>
+          <a
+            href="/"
+          >
+            <li
+              class="sc-jSgvzq sc-gKseQn gvtmhi XFgwd"
+            >
+               Articles 
+            </li>
+          </a>
+          <a
+            href="/"
+          >
+            <li
+              class="sc-jSgvzq sc-gKseQn gvtmhi XFgwd"
+            >
+               SE Practices 
+            </li>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div
+        class="sc-fFucqa ixZQmp"
+      >
+        <div
+          class="sc-bkzYnD bXsYoR"
+        >
+          <h2
+            class="sc-idOiZg iZLItA"
+          >
+            SEPER DRAFT HOME PAGE
+          </h2>
+          <a
+            href="/displayEvidence"
+          >
+            <button
+              class="sc-dIUeWJ kYiIPe"
+            >
+               Display Evidence 
+            </button>
+          </a>
+        </div>
+      </div>
+    </main>
+    <div
+      class="sc-fubCzh beSPrm"
+    >
+      <div
+        class="sc-dQoVA jLfTQo"
+      >
+        <div
+          class="sc-jrAFXE jlwsXB"
+        >
+           Seper | Articles & SE Practices 
+        </div>
+        <div
+          class="sc-bqyKOL irboIU"
+        >
+          <a
+            href="/"
+          >
+            <div
+              class="sc-kEjbQP jmdJho"
+            >
+               About Us
+            </div>
+          </a>
+          <a
+            href="/"
+          >
+            <div
+              class="sc-iqHYmW kqUFWo"
+            >
+               Evidences 
+            </div>
+          </a>
+          <a
+            href="/"
+          >
+            <div
+              class="sc-crrszt bIZPSt"
+            >
+               Contact Us 
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        class="sc-iBPTik cAWDhd"
+      >
+        <div
+          class="sc-hBEYId jDlLKu"
+        >
+           © 2021 SEPER 
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -6,7 +6,7 @@ const articles = [
       source: "EASE",
       pubyear: "2014",
       doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: ["code quality improvement"],
+      claim: ["Code Quality Improvement"],
       evidence: ["strong support"],
     },
     {
@@ -16,7 +16,7 @@ const articles = [
       source: "EASE",
       pubyear: "2014",
       doi: "https://doi.org/10.1145/2601248.2601267",
-      claim: ["product quality improvement"],
+      claim: ["Product Quality Improvement"],
       evidence: ["weak against"],
     },
     {
@@ -26,7 +26,7 @@ const articles = [
       source: " Empirical Software Engineering, 13(3), 289–302",
       pubyear: "2008",
       doi: "https://doi.org/10.1007/s10664-008-9062-z",
-      claim: ["product quality improvement"],
+      claim: ["Product Quality Improvement"],
       evidence: ["weak support"],
     },
     {
@@ -36,7 +36,7 @@ const articles = [
       source: "Software, IEEE, 25(2) 77-84",
       pubyear: "2008",
       doi: "",
-      claim: ["code quality improvement"],
+      claim: ["Code Quality Improvement"],
       evidence: ["strong support"],
     },
     {
@@ -46,7 +46,7 @@ const articles = [
       source: "ArXiv.Org, cs.SE, arXiv:1711.05082-284",
       pubyear: "2017",
       doi: "https://doi.org/10.1109/esem.2007.35",
-      claim: ["code quality improvement"],
+      claim: ["Code Quality Improvement"],
       evidence: ["weak support"],
     },
     {
@@ -96,7 +96,7 @@ const articles = [
       source: "ICSSP, 113–122",
       pubyear: "2018",
       doi: "https://doi.org/10.1145/3202710.3203153",
-      claim: ["code quality improvement"],
+      claim: ["Code Quality Improvement"],
       evidence: ["weak support"],
     },
     {
@@ -116,7 +116,7 @@ const articles = [
       source: "WBMA, 1106(1), 11–24.",
       pubyear: "2019",
       doi: "https://doi.org/10.1007/978-3-030-36701-5_2",
-      claim: ["code quality improvement"],
+      claim: ["Code Quality Omprovement"],
       evidence: ["weak support"],
     },
   ];
