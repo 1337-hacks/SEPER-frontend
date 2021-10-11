@@ -14,6 +14,10 @@ const HomePage = () => {
                 <Link to='/displayEvidence'>
                     <DisplayButton> Display Evidence </DisplayButton>
                 </Link>
+                <p>ekdee</p>
+                <Link to='/SubmitPage'>
+                    <DisplayButton> Submit Evidence </DisplayButton>
+                </Link>
             </ContentContainer>
         </PageWrapper>
     );
