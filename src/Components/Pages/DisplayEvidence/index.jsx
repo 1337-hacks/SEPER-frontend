@@ -82,7 +82,7 @@ const DisplayEvidencePage = function() {
     }
   }
 
-  if(minYearResult === undefined || minYearResult === '-'){ // 
+  if(minYearResult === undefined || minYearResult === '-'){ // if min year is not selected, populate maxYear array with all values
     for(var y = 0; y < SEPubYear.length; y++){
       maxYear[y] = SEPubYear[y].pubyear;
     }
@@ -94,7 +94,7 @@ const DisplayEvidencePage = function() {
     }
   }
 
-  for(index; index < SEPubYear.length; index++){
+  for(index; index < SEPubYear.length; index++){ // if min year is chosen, populate array with values starting from index minimum year value selected
     maxYear[index]= SEPubYear[index];
   }
 
