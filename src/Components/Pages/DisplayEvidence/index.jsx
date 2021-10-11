@@ -59,16 +59,19 @@ const DisplayEvidencePage = function() {
   const filteredData = []; // new array
   const maxYear = [];
 
+  /* Fetch data from maxYear array */
   const MaxYearItems = maxYear.map((maxYear) =>
     <option key={maxYear.pubyear}>{maxYear.pubyear}</option>,
   );
 
+  /* Grabs selected balue from max year dropdown menu */
   const [maxYearResult, maxYearValue] = useState(MaxYearItems.pubyear)
 
   const MaxYearHandler = e => {
     maxYearValue(e.pubyear)
   }
 
+  /* Re-writes maxYear array corresponding to min year selection */
   var index = 0;
 
   if(minYearResult !== undefined || minYearResult !== "-"){ // get index of user selection for min year value
@@ -95,6 +98,7 @@ const DisplayEvidencePage = function() {
     maxYear[index]= SEPubYear[index];
   }
 
+  /* Dropdown menu logic for all */
   if((result === undefined || result === 'Show All')  // if user hasnt inputted...
   && 
     (minYearResult === undefined || minYearResult === '-')
