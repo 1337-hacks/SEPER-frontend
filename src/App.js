@@ -6,6 +6,7 @@ import PageLayout from './Components/Layout';
 // Pages
 import HomePage from './Components/Pages/Home';
 import DisplayEvidencePage from './Components/Pages/DisplayEvidence';
+import SubmitPage from './Components/Pages/SubmitPage';
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +21,8 @@ class App extends Component {
           <PageLayout>
             <Switch>
               <Route path="/" component={HomePage} exact />
-              <Route path="/" component={DisplayEvidencePage} />
+              <Route path="/displayEvidence" component={DisplayEvidencePage} />
+              <Route path="/SubmitPage" component={SubmitPage} />
             </Switch>
           </PageLayout>
         </Router>

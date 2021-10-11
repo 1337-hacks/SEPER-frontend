@@ -22,11 +22,11 @@ const Header = () => {
                     <Link to = '/'>
                         <NavButtons> Home </NavButtons>
                     </Link>
-                    <Link to = '/'>
-                        <NavButtons> Search? </NavButtons>
+                    <Link to = '/SubmitPage'>
+                        <NavButtons> Submit Article </NavButtons>
                     </Link>
-                    <Link to = '/'>
-                        <NavButtons> Articles </NavButtons>
+                    <Link to = '/displayEvidence'>
+                        <NavButtons> Display Evidence </NavButtons>
                     </Link>
                     <Link to = '/'>
                         <NavButtons> SE Practices </NavButtons>

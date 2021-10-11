@@ -12,8 +12,8 @@ import {
 
 import Table from "../../Evidence-Table/evidencetable";
 import tablecolumns from "../../Evidence-Table/tablecolumns";
-import Dropdown from "../../Evidence-Table/dropdown";
-import Styles from "../../Evidence-Table/tablestyle";
+// import Dropdown from "../../Evidence-Table/dropdown";
+// import Styles from "../../Evidence-Table/tablestyle";
 
 const DisplayEvidencePage = function() {
 
