@@ -1,16 +1,13 @@
 const SEPractices = [
-    {
-      id: 1,
-      practice: 'Product Quality Improvement',
-    },
-    {
-      id: 2,
-      practice: 'Code Quality Omprovement',
-    },
-    {
-      id: 3,
-      practice: 'Team Satisfaction Improvement',
-    }
-  ];
+  {
+    practice: 'Show All',
+  },
+  {
+    practice: 'TDD',
+  },
+  {
+    practice: 'Mob Programming',
+  }
+];
 
-  export default SEPractices;
+export default SEPractices;

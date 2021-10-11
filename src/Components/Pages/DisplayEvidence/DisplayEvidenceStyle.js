@@ -20,6 +20,10 @@ export const PageContainer = styled.div`
 
 `;
 
+export const SelectionContainer = styled.div`
+
+`;
+
 export const Data = styled.div`
     --width: 1250px;
 
