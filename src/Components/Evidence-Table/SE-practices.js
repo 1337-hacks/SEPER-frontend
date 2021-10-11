@@ -10,4 +10,4 @@ const SEPractices = [
   }
 ];
 
-  export default SEPractices;
+export default SEPractices;

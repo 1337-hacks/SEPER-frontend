@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { 
   PageWrapper, 
   PageContainer,
+  SelectionContainer,
   Data,
   DisplayButton,
   PageHeader
@@ -15,6 +16,7 @@ import tablecolumns from "../../Evidence-Table/tablecolumns";
 // import Dropdown from "../../Evidence-Table/dropdown";
 import Styles from "../../Evidence-Table/tablestyle";
 import SEPractices from '../../Evidence-Table/SE-practices';
+import SEPubYear from '../../Evidence-Table/years';
 import Select from "react-select";
 
 const DisplayEvidencePage = function() {
@@ -22,14 +24,25 @@ const DisplayEvidencePage = function() {
   /* Fetch data from SE Practices table */
   const optionItems = SEPractices.map((SEPractices) =>
     <option key={SEPractices.practice}>{SEPractices.practice}</option>,
-    console.log(SEPractices)
   );
 
-  /* Grabs selected value from dropdown menu */
+  /* Grabs selected value from SEPractices dropdown menu */
   const [result, optionValue] = useState(optionItems.practice);
 
   const optionHandler = e => {
     optionValue(e.practice)
+  }
+
+  /* Fetch data from years */
+  const YearSelectionItems = SEPubYear.map((SEPubYear) => 
+    <option key={SEPubYear.pubyear}>{SEPubYear.pubyear}</option>
+  );
+
+    /* Grabs selected value from min year dropdown menu */
+  const [minYearResult, yearValue] = useState(YearSelectionItems.pubyear);
+
+  const MinYearHandler = e => {
+    yearValue(e.pubyear)
   }
 
   /* Fetch data from Backend */
@@ -44,25 +57,73 @@ const DisplayEvidencePage = function() {
 
   /* Filter articles corresponsing to user input */
   const filteredData = []; // new array
+  const maxYear = [];
 
-  if(result === undefined || result === 'Show All'){ // if user hasnt inputted...
-    for (var i = 0; i < articles.length; i++){
-      filteredData[i] = articles[i]; // ... populate table with all elements
-    }
-  } else { // if user has chosen from dropdown menu
-    for (var c = 0; c < articles.length; c++){
-      if(articles[c].practice === result) {
-        // filteredData.filter(function (e) {return e != null;});
-        filteredData[c] = articles[c]; // populate with elements corresponding to user input
-      }
+  const MaxYearItems = maxYear.map((maxYear) =>
+    <option key={maxYear.pubyear}>{maxYear.pubyear}</option>,
+  );
+
+  const [maxYearResult, maxYearValue] = useState(MaxYearItems.pubyear)
+
+  const MaxYearHandler = e => {
+    maxYearValue(e.pubyear)
+  }
+
+  var index = 0;
+
+  if(minYearResult !== undefined || minYearResult !== "-"){ // get index of user selection for min year value
+    for(var a = 0; a < SEPubYear.length; a++){
+        if(minYearResult === SEPubYear[a].pubyear){
+          index = a;
+        }
     }
   }
 
-  console.log("-= Dropdown result =-")
-  console.log(result);
+  if(minYearResult === undefined || minYearResult === '-'){ // 
+    for(var y = 0; y < SEPubYear.length; y++){
+      maxYear[y] = SEPubYear[y].pubyear;
+    }
+  } else if(minYearResult !== undefined || minYearResult !== "-"){ // get index of user selection for min year value
+    for(var a = 0; a < SEPubYear.length; a++){
+        if(minYearResult === SEPubYear[a].pubyear){
+          index = a;
+        }
+    }
+  }
 
-  console.log("-= Filtered Data =-")
-  console.log(filteredData);
+  for(index; index < SEPubYear.length; index++){
+    maxYear[index]= SEPubYear[index];
+  }
+
+  if((result === undefined || result === 'Show All')  // if user hasnt inputted...
+  && 
+    (minYearResult === undefined || minYearResult === '-')
+  &&
+    (maxYearResult === undefined || maxYearResult === '-')){
+    for (var i = 0; i < articles.length; i++){
+      for(var x = 0; x < articles.length; x++){
+        filteredData[x] = articles[x]; // ... populate table with all elements
+      }
+    }
+  } else { // if user has inputted
+    for (var c = 0; c < articles.length; c++){
+      if((articles[c].practice === result) && (articles[c].pubyear >= minYearResult) && (articles[c].pubyear <= maxYearResult)) { // if SE practice, min year and max year is chosen
+        filteredData[c] = articles[c]; 
+      } else if((articles[c].practice === result) && (minYearResult === undefined || minYearResult === '-') && (maxYearResult === undefined || maxYearResult === '-')){ // if only SE practice is chosen
+        filteredData[c] = articles[c];
+      } else if((articles[c].pubyear >= minYearResult) && (result === undefined || result === 'Show All') && (maxYearResult === undefined || maxYearResult === '-')){ // if only min year is chosen
+        filteredData[c] = articles[c];
+      } else if((articles[c].pubyear <= maxYearResult) && (result === undefined || result === 'Show All') && (minYearResult === undefined || minYearResult === '-')){ // if only max year is chosen
+        filteredData[c] = articles[c];
+      } else if((articles[c].pubyear >= minYearResult) && (articles[c].pubyear <= maxYearResult) && (result === undefined || result === 'Show All')){ // if only min and max year is chosen
+        filteredData[c] = articles[c];
+      } else if((articles[c].practice === result) && (articles[c].pubyear >= minYearResult) && (maxYearResult === undefined || maxYearResult === '-')){ // if only SE prac and min year is chosen
+        filteredData[c] = articles[c];
+      } else if((articles[c].practice === result) && (articles[c].pubyear <= maxYearResult) && (minYearResult === undefined || minYearResult === '-')){ // if only SE prac and max year is chosen
+        filteredData[c] = articles[c];
+      }
+    }
+  }
 
   return (
     <PageWrapper>
@@ -74,14 +135,36 @@ const DisplayEvidencePage = function() {
           <div>
               <h2>SEPER Evidence Table</h2>
               {/* <Dropdown/> */}
-              {/* Dropdown menu */}
+              {/* SEPractices dropdown menu */}
               <p>-= Select an SE Practice to display below =- </p>
-              <Select 
-                options={SEPractices} 
-                onChange={optionHandler}
-                getOptionLabel={(SEPractices) => SEPractices['practice']}
-                getOptionValue={(SEPractices) => SEPractices['practice']}
-              />
+              <SelectionContainer>
+                <Select 
+                  options={SEPractices} 
+                  onChange={optionHandler}
+                  getOptionLabel={(SEPractices) => SEPractices['practice']}
+                  getOptionValue={(SEPractices) => SEPractices['practice']}
+                />
+
+                {/* Year selection */}
+                <p>-== Select a min year to display below  ==- </p>
+                <Select 
+                  options={SEPubYear} 
+                  onChange={MinYearHandler}
+                  getOptionLabel={(SEPubYear) => SEPubYear['pubyear']}
+                  getOptionValue={(SEPubYear) => SEPubYear['pubyear']}
+                />
+
+                <p>-== Select a max year to display below  ==- </p>
+                <Select 
+                  options={maxYear} 
+                  onChange={MaxYearHandler}
+                  defaultValue={'-'}
+                  placeholder={'Select a min year first'}
+                  getOptionLabel={(maxYear) => maxYear['pubyear']}
+                  getOptionValue={(maxYear) => maxYear['pubyear']}
+                />
+              </SelectionContainer>
+              
               {/* Container for Evidence Table */}
               <Styles>
                 <Table data={filteredData} columns={tablecolumns}/>
