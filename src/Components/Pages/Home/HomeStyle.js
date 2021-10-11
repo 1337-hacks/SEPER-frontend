@@ -34,4 +34,6 @@ export const DisplayButton = styled.button`
   color: #fff;
   font-size: 15px;
   border-radius: 7px;
+  outline-width: 2px;
+  outline-style: solid;
 `;
