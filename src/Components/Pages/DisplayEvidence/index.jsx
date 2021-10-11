@@ -50,7 +50,7 @@ const DisplayEvidencePage = function() {
 
 	useEffect(() => {
 		axios
-      .get(process.env.REACT_APP_API_URL.concat('./routes/articles'))
+      .get(process.env.REACT_APP_API_URL.concat('/routes/articles'))
 			.then((articles) => setArticles(articles.data))
 			.catch((err) => console.log(err));
 	}, []);
